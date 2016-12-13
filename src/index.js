@@ -25,17 +25,29 @@ export function doubleEach ( arr ) {
 }
 
 export function Animal() {}
-Animal.prototype.speak = 'generic sound';
+Animal.SOUND = 'generic sound';
+Animal.prototype.speak = function () {
+  return Animal.SOUND;
+};
 
 Reptile.prototype = Object.create(Animal.prototype);
 export function Reptile() {}
-Reptile.prototype.speak = () => console.log('Hisss!');
+Reptile.SOUND = 'Hisss!'
+Reptile.prototype.speak = function () {
+ return Reptile.SOUND; 
+}
 
 Primate.prototype = Object.create(Animal.prototype);
 export function Primate() {}
-Primate.prototype.speak = () => console.log('Oo Oo Oo!');
+Primate.SOUND = 'George want banana.'
+Primate.prototype.speak = function () {
+  return Primate.SOUND;
+}
 
 Human.prototype = Object.create(Primate.prototype);
 export function Human() {}
-Human.prototype.speak = ( message ) => message;
+Human.SOUND = 'hello'
+Human.prototype.speak = function () {
+  return Human.SOUND;
+}
 

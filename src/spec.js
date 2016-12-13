@@ -29,7 +29,7 @@ test( 'doubleEach', function ( test ) {
 });
 
 
-test ( 'Animal', function ( test ) {
+test ( 'Creating animal constructor', function ( test ) {
   const animal = new Animal();
 
 	test.ok( animal instanceof Animal, 'should create an instance of Animal' );
@@ -37,10 +37,10 @@ test ( 'Animal', function ( test ) {
 	test.end();
 });
 
-test ( 'Animal.speak', function ( test ) {
+test ( 'Animal should have a speak method', function ( test ) {
   const animal = new Animal();
 
-  const actual = animal.speak;
+  const actual = animal.speak();
   const expected = 'generic sound';
 
   test.equal( actual, expected, 'the animal should speak');
@@ -48,7 +48,7 @@ test ( 'Animal.speak', function ( test ) {
   test.end();
 });
 
-test ( 'animal inheritance', function ( test ) {
+test ( 'Animal inheritance', function ( test ) {
   let actual, expected;
 
   const reptile = new Reptile();
@@ -56,7 +56,7 @@ test ( 'animal inheritance', function ( test ) {
   test.ok( reptile instanceof Reptile, 'should be an instance of Reptile' );
   test.ok( reptile instanceof Animal, 'should be an instance of Animal' );
 
-  expected = Reptile.SOUND; //not sure what Reptile.SOUND is
+  expected = Reptile.SOUND;
   actual = reptile.speak();
   
   test.equal( actual, expected, 'should make a reptile sound when it speaks' );
@@ -76,7 +76,7 @@ test ( 'animal inheritance', function ( test ) {
 
 });
 
-test ( 'reptile prototypes', function ( test ) {
+test ( 'Reptile prototypes should be equal', function ( test ) {
   const reptile1 = new Reptile();
   const reptile2 = new Reptile();
 
@@ -85,7 +85,7 @@ test ( 'reptile prototypes', function ( test ) {
   test.end();
 });
 
-test ( 'human inheritance', function ( test ) {
+test ( 'Double inheritance', function ( test ) {
   let actual, expected;
 
   const human = new Human();
